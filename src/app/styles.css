@@ -1,0 +1,217 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  height: auto;
+}
+.font-mont {
+  font-family: var(--font-mont), sans-serif;
+}
+p {
+  font-size: 16px;
+}
+h4 {
+  font-size: 96px;
+  font-family: var(--font-allura), sans-serif;
+}
+
+
+@media only screen and (min-width: 2000px) {
+  .first-bg {
+    background-image: linear-gradient(
+        rgba(70, 55, 10, 0.3),
+        rgba(70, 55, 10, 0.1)
+      ),
+      url("../../public/RealEstateHomeBack.jpg");
+    background-size: 110%;
+    background-repeat: no-repeat;
+    background-position: 20% 75%;
+  }
+.ThirdSectionBack {
+    background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+      url("../../public/3rdSectionBack.jpg");
+  
+    background-size: 100%;
+    background-position: 100%;
+  }
+.bg-villa{
+  background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+  url("../../public/villa1.jpeg");
+
+background-size: cover;
+background-position: auto;
+background-repeat: no-repeat; 
+}
+.bg-building {
+  background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+  url("../../public/building2.jpg");
+  background-size: cover;
+  background-position: auto;
+  background-repeat: no-repeat; 
+}
+
+.bg-stair {
+  background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+  url("../../public/stair3.jpeg");
+  background-size: cover;
+  background-position: auto;
+  background-repeat: no-repeat; 
+}
+  .span-line {
+    @apply h-[175px] bg-black w-[1px] lg:inline-block;
+  }
+  .li-block {
+    @apply lg:w-1/4 w-[350px] sm:w-[450px] text-center flex-col flex gap-2 lg:text-left;
+  }
+}
+@media only screen and (max-width: 2000px) {
+
+    .first-bg {
+        background-image: linear-gradient(
+            rgba(70, 55, 10, 0.3),
+            rgba(70, 55, 10, 0.1)
+          ),
+          url("../../public/RealEstateHomeBack.jpg");
+        background-size: 110%;
+        background-repeat: no-repeat;
+        background-position: 20% 75%;
+      }
+    .ThirdSectionBack {
+        background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+          url("../../public/3rdSectionBack.jpg");
+      
+        background-size: 100%;
+        background-position: 100%;
+      }
+    .bg-villa{
+      background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+      url("../../public/villa1.jpeg");
+  
+    background-size: cover;
+    background-position: auto;
+    background-repeat: no-repeat; 
+    }
+    .bg-building {
+      background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+      url("../../public/building2.jpg");
+      background-size: cover;
+      background-position: auto;
+      background-repeat: no-repeat; 
+    }
+    
+    .bg-stair {
+      background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+      url("../../public/stair3.jpeg");
+      background-size: cover;
+      background-position: auto;
+      background-repeat: no-repeat; 
+    }
+      .span-line {
+        @apply h-[175px] bg-black w-[1px] lg:inline-block;
+      }
+      .li-block {
+        @apply lg:w-1/4 w-[350px] sm:w-[450px] text-center flex-col flex gap-2 lg:text-left;
+      }
+}
+@media only screen and (max-width: 1440px) {
+  .first-bg {
+    background-image: linear-gradient(
+        rgba(70, 55, 10, 0.3),
+        rgba(70, 55, 10, 0.1)
+      ),
+      url("../../public/RealEstateHomeBack.jpg");
+    background-size: 125%;
+    background-repeat: no-repeat;
+    background-position: 20% 75%;
+  }
+  .ThirdSectionBack {
+    background-image: linear-gradient(rgba(9, 2, 37, 0.3), rgba(7, 4, 27, 0.3)),
+      url("../../public/3rdSectionBack.jpg");
+  
+    background-size: 100%;
+    background-position: 100%;
+    background-repeat: no-repeat;
+  }
+}
+@media only screen and (max-width: 1280px) {
+
+}
+@media only screen and (max-width: 990px) {
+  .first-bg {
+    background-image: linear-gradient(
+        rgba(70, 55, 10, 0.3),
+        rgba(70, 55, 10, 0.1)
+      ),
+      url("../../public/RealEstateHomeBack.jpg");
+    background-size: 250%;
+    background-repeat: no-repeat;
+    background-position: 20% 75%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .first-bg {
+    background-image: linear-gradient(
+        rgba(70, 55, 10, 0.3),
+        rgba(70, 55, 10, 0.1)
+      ),
+      url("../../public/RealEstateHomeBack.jpg");
+    background-size: 360%;
+    background-repeat: no-repeat;
+    background-position: 20% 70%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .first-bg {
+    background-image: linear-gradient(
+        rgba(70, 55, 10, 0.3),
+        rgba(70, 55, 10, 0.1)
+      ),
+      url("../../public/RealEstateHomeBack.jpg");
+    background-size: 350%;
+    background-repeat: no-repeat;
+    background-position: 20% 75%;
+  }
+}
+
+
+/* Slider styles */
+.swiper {
+  width: 100%;
+  min-height: 500px;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; 
+  border-radius: 10px 10px 10px; 
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+.popup {
+  transform-origin: center;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(0.99);
+  }
+  50% {
+    transform: scale(1.01);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.singleQuote": true,
+  "prettier.bracketSpacing": true,
+  "bracketSpacing": true,
+  "editor.formatOnSave": false,
+  "cSpell.words": [
+    "PREMIFINO"
+  ]
+}

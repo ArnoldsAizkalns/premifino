@@ -1,0 +1,64 @@
+{
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page."
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, el {Greek} en {English} other {Unknown}}"
+  },
+  "Navigation": {
+    "home": "Αρχική",
+    "about": "Σχετικά",
+    "why us": "Γιατί Εμάς",
+    "contact": "Επικοινωνία"
+  },
+    "LocaleLayout": {
+      "title": "PREMIFINO",
+      "description": "RΚΤΗΜΑΤΟΜΕΣΙΤΙΚΑ ΣΤΗΝ ΚΥΠΡΟ"
+    },
+      "welcomeMessage": "ΚΑΛΩΣ ΉΡΘΑΤΕ ΣΤΗΝ PREMIFINO LTD",
+      "headline": "ΑΚΊΝΗΤΑ \n ΣΤΗΝ ΚΎΠΡΟ",
+      "description": "Η Premifio Ltd είναι μια εταιρεία που κατασκευάζει σπίτια και συγκροτήματα διαμερισμάτων. Επικεντρωνόμαστε στην ποιοτική κατασκευή, τα βιώσιμα υλικά και τη δημιουργία άνετων χώρων διαβίωσης για οικογένειες και μεμονωμένα άτομα.",
+      "aboutUsTitle": "Σχετικά μας",
+      "aboutUsSubtitle": "Είμαστε μια αφοσιωμένη ομάδα που φέρνει τα σπίτια και τα συγκροτήματα διαμερισμάτων στη ζωή",
+      "aboutUsDescription": "Κάθε έργο είναι ένας συνδυασμός της τοπικής αρχιτεκτονικής και των σύγχρονων ανέσεων, διασφαλίζοντας ότι οι κατασκευές μας συμπληρώνουν την πλούσια κληρονομιά της Κύπρου. Εδώ, δεν δημιουργούμε απλώς δομές. Δημιουργούμε σπίτια που ενσωματώνουν το κυπριακό πνεύμα.",
+      "contactButton": "Επικοινωνία",
+      "weBuildMessage": "Κατασκευάζουμε σπίτια, διαμερίσματα και εμπορικούς χώρους",
+      "whyUsTitle": "γιατί εμάς",
+      "whyUsSubtitle": "Προχωρώντας πέρα και πέρα για να χτίσετε το επόμενο σπίτι σας",
+      "enduringQualityTitle": "ανθεκτική ποιότητα",
+      "enduringQualityDescription": "Χτισμένο για να διαρκέσει, τα σπίτια μας συγχωνεύουν την εξαιρετική τεχνοτροπία με υλικά που αντιστέκονται στη φθορά του χρόνου.",
+      "functionalDesignTitle": "λειτουργικός σχεδιασμός",
+      "functionalDesignDescription": "Δημιουργημένο για την καθημερινή ζωή, κάθε χώρος στα σπίτια μας είναι προσεκτικά και λεπτομερώς σχεδιασμένος για να ανταποκρίνεται απρόσκοπτα στις σύγχρονες     ανάγκες.",
+      "trueComfortTitle": "αληθινή άνεση",
+      "trueComfortDescription": "Πέρα από την αισθητική, οι χώροι μας προτιμούν την ευημερία, εξασφαλίζοντας ότι κάθε στιγμή στο σπίτι είναι μια γνήσια εμπειρία χαλάρωσης.",
+      "timelessAppealTitle": "ατελείωτη γοητεία",
+      "timelessAppealDescription": "Ισορροπώντας την κλασική αισθητική με τις σύγχρονες προτιμήσεις, οι σχεδιάσεις μας υπερβαίνουν τις εφήμερες τάσεις, διατηρώντας την ομορφιά διαμέσου των     δεκαετιών.",
+      "luxuryConvenience": "Πολυτέλεια και άνεση συγκλίνουν",
+      "locationCommunityQuality": "Τοποθεσία, Κοινότητα, Ποιοτική Ζωή. Ξεκινά εδώ!",
+      "contactLink": "Επικοινωνία",
+      "beautyPassion": "Ομορφιά, Πάθος, Συγκλονιστικά Διαμερίσματα",
+      "weBuildFor": "Χτίζουμε για",
+      "families": "Οικογένειες,",
+      "crafting": "Δημιουργία",
+      "spacesFor": "Χώροι για",
+      "memories": "Αναμνήσεις",
+      "outstandingHousesApartments": "Εξαιρετικά σπίτια & Διαμερίσματα",
+      "nameAndSurname": "Όνομα και Επώνυμο",
+      "required": "Απαιτείται",
+      "sendMessage": "Αποστολή Μηνύματος",
+      "yourEmail": "Το Ηλεκτρονικό Σας Ταχυδρομείο",
+      "phoneNumber": "Τηλεφωνικός Αριθμός",
+      "subject": "Θέμα",
+      "enterYourMessage": "Πληκτρολογήστε το μήνυμά σας εδώ",
+      "modalСontent": "Αυτός ο ιστότοπος χρησιμοποιεί cookies. Συνεχίζοντας την περιήγηση στον ιστότοπο, συμφωνείτε με τη χρήση των cookies",
+      "modalAgreeText": "Συμφωνώ"
+
+
+      
+}

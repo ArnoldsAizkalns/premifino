@@ -1,0 +1,70 @@
+{
+  "Error": {
+    "title": "Something went wrong!",
+    "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>"
+  },
+  "NotFoundPage": {
+    "title": "Page not found",
+    "description": "Please double-check the browser address bar or use the navigation to go to a known page."
+  },
+  "LocaleSwitcher": {
+    "label": "Change language",
+    "locale": "{locale, select, el {Greek} en {English} other {Unknown}}"
+  },
+  "Navigation": {
+    "home": "Home",
+    "about": "About Us",
+    "why us": "Why Us",
+    "contact": "Contact"
+  },
+  "LocaleLayout": {
+    "title": "PREMIFINO",
+    "description": "REAL ESTATE IN CYPRUS"
+  },
+  "IndexPage":{
+    "title": "Premifino LTD",
+    "description": "Real Estate In Cyprus"
+},
+  "PageLayout" :{
+    "description":"Real Estate In Cyprus",
+    "href":"https://premifino.el",
+    "title":"PREMIFINO LTD"
+  },
+  "welcomeMessage": "WELCOME TO PREMIFINO LTD",
+  "headline": "REAL ESTATE \n IN CYPRUS",
+  "description": "Premifino Ltd is a company that builds houses and apartment complexes. We focus on quality construction, sustainable materials, and creating comfortable living spaces for families and individuals alike.",
+  "aboutUsTitle": "About us",
+  "aboutUsSubtitle": "We`re A Dedicated Team That Brings Homes And Apartment Complexes To Life",
+  "aboutUsDescription": "Each project is a blend of local architecture and modern comforts, ensuring our builds complement Cyprus`s rich heritage. Here, we don`t just create structures; we craft homes that embody the Cypriot spirit.",
+  "contactButton": "Contact",
+  "weBuildMessage": "We build houses, apartments and commercial spaces",
+  "whyUsTitle": "why us",
+  "whyUsSubtitle": "Going Above and Beyond To Build Your Next Home",
+  "enduringQualityTitle": "enduring quality",
+  "enduringQualityDescription": "Built to last, our homes merge exceptional workmanship with materials that resist time`s wear and tear.",
+  "functionalDesignTitle": "functional design",
+  "functionalDesignDescription": "Crafted for daily life, every space in our homes is thoughtfully and meticulously designed to meet modern needs seamlessly.",
+  "trueComfortTitle": "true comfort",
+  "trueComfortDescription": "Beyond aesthetics, our spaces prioritize well-being, ensuring every moment at home is a genuine relaxation experience.",
+  "timelessAppealTitle": "timeless appeal",
+  "timelessAppealDescription": "Balancing classic aesthetics with contemporary tastes, our designs transcend fleeting trends, retaining beauty across decades.",
+  "luxuryConvenience": "Luxury and Convenience Converge",
+  "locationCommunityQuality": "Location, Community, Quality Living. It Starts Here!",
+  "contactLink": "Contact",
+  "beautyPassion": "Beauty, Passion, Breathtaking Apartments",
+  "weBuildFor": "We Build For",
+  "families": "Families,",
+  "crafting": "Crafting",
+  "spacesFor": "Spaces For",
+  "memories": "Memories",
+  "outstandingHousesApartments": "Outstanding houses & Apartments",
+  "nameAndSurname": "Name and Surname",
+  "required": "Required",
+  "sendMessage": "Send message",
+  "yourEmail": "Your E-mail",
+  "phoneNumber": "Phone Number",
+  "subject": "Subject",
+  "enterYourMessage": "Enter your message here",
+  "modalСontent": "This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies",
+  "modalAgreeText": "Agree"
+}
