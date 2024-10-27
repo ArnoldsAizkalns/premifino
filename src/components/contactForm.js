@@ -1,24 +1,14 @@
 'use client';
-import {
-  Button,
-  Container,
-  FormControl,
-  FormErrorMessage,
-  Input,
-  Text,
-  Textarea,
-  useToast,
-} from '@chakra-ui/react';
-import { useState } from 'react';
+
+import React, { useState } from 'react';
 import { sendContactForm } from '../../pages/api/api';
 import { useTranslations } from 'next-intl';
 
-const initValues = { name: '', email: '', subject: '', message: '' };
+const initValues = { name: '', email: '', subject: '', message: '', phoneNumber: '' };
 const initState = { isLoading: false, error: '', values: initValues };
 
 export default function ContactForm() {
-  const t = useTranslations();
-  const toast = useToast();
+  const t = useTranslations("ContactForm");
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
 
@@ -45,12 +35,6 @@ export default function ContactForm() {
       await sendContactForm(values);
       setTouched({});
       setState(initState);
-      toast({
-        title: 'Message sent.',
-        status: 'success',
-        duration: 2000,
-        position: 'top',
-      });
     } catch (error) {
       setState((prev) => ({
         ...prev,
@@ -61,72 +45,43 @@ export default function ContactForm() {
   };
 
   return (
-    <Container>
-      {error && (
-        <Text color="red.300" my={4} fontSize="xl">
-          {error}
-        </Text>
-      )}
+    <div className="container mx-auto p-4">
+      {error && <p className="text-red-500 my-4 text-lg">{error}</p>}
 
-      <FormControl isRequired isInvalid={touched.name && !values.name} mb={5}>
-        <Input
-          className=""
+      <div className="mb-5">
+        <input
           type="text"
-          rounded="sm"
-          _placeholder={{
-            color: 'gray.700',
-          }}
-          bg="white"
+          className={`w-full p-2 rounded-sm bg-white border ${touched.name && !values.name ? 'border-red-500' : 'border-gray-300'}`}
           placeholder={t('nameAndSurname')}
           name="name"
           autoComplete="on"
-          errorBorderColor="red.300"
           value={values.name}
           onChange={handleChange}
           onBlur={onBlur}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+        {touched.name && !values.name && <div className="text-xs text-red-500">Required</div>}
+      </div>
 
-      <FormControl isRequired isInvalid={touched.email && !values.email} mb={5}>
-        <Input
+      <div className="mb-5">
+        <input
           placeholder={t('yourEmail')}
-          _placeholder={{
-            color: 'gray.700',
-          }}
-          bg="white"
+          className={`w-full p-2 rounded-sm bg-white border ${touched.email && !values.email ? 'border-red-500' : 'border-gray-300'}`}
           type="email"
           name="email"
-          rounded="sm"
           autoComplete="on"
-          errorBorderColor="red.300"
           value={values.email}
           onChange={handleChange}
-          onBlur={() => setTouched({ ...touched, email: true })}
-          isInvalid={
-            (touched.email && !values.email) ||
-            (touched.email &&
-              !/^[\w.-]+@[a-zA-Z_-]+\.[a-zA-Z]{2,3}$/.test(values.email))
-          }
+          onBlur={onBlur}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+        {touched.email && !values.email && <div className="text-xs text-red-500">Required</div>}
+      </div>
 
-      <FormControl
-        mb={5}
-        isRequired
-        isInvalid={touched.phoneNumber && !values.phoneNumber}
-      >
-        <Input
+      <div className="mb-5">
+        <input
           placeholder={t('phoneNumber')}
           type="tel"
-          _placeholder={{
-            color: 'gray.700',
-          }}
-          bg="white"
+          className={`w-full p-2 rounded-sm bg-white border ${touched.phoneNumber && !values.phoneNumber ? 'border-red-500' : 'border-gray-300'}`}
           name="phoneNumber"
-          rounded="sm"
-          errorBorderColor="red.300"
           value={values.phoneNumber}
           onChange={handleChange}
           onBlur={onBlur}
@@ -138,67 +93,41 @@ export default function ContactForm() {
             }
           }}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
-      <FormControl
-        isRequired
-        isInvalid={touched.subject && !values.subject}
-        mb={5}
-      >
-        <Input
-          className=""
+        {touched.phoneNumber && !values.phoneNumber && <div className="text-xs text-red-500">Required</div>}
+      </div>
+
+      <div className="mb-5">
+        <input
           type="text"
           placeholder={t('subject')}
+          className={`w-full p-2 rounded-sm bg-white border ${touched.subject && !values.subject ? 'border-red-500' : 'border-gray-300'}`}
           name="subject"
-          _placeholder={{
-            color: 'gray.700',
-          }}
-          bg="white"
-          rounded="sm"
-          errorBorderColor="red.300"
           value={values.subject}
           onChange={handleChange}
           onBlur={onBlur}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+        {touched.subject && !values.subject && <div className="text-xs text-red-500">Required</div>}
+      </div>
 
-      <FormControl
-        isRequired
-        isInvalid={touched.message && !values.message}
-        mb={5}
-      >
-        <Textarea
+      <div className="mb-5">
+        <textarea
           placeholder={t('enterYourMessage')}
           name="message"
-          _placeholder={{
-            color: 'gray.700',
-          }}
-          bg="white"
-          rounded="sm"
-          errorBorderColor="red.300"
+          className={`w-full p-2 rounded-sm bg-white border ${touched.message && !values.message ? 'border-red-500' : 'border-gray-300'}`}
           value={values.message}
           onChange={handleChange}
           onBlur={onBlur}
         />
-        <FormErrorMessage>Required</FormErrorMessage>
-      </FormControl>
+        {touched.message && !values.message && <div className="text-xs text-red-500">Required</div>}
+      </div>
 
-      <Button
-        size="md"
-        height="48px"
-        width="full"
-        rounded="sm"
-        border="2px"
-        bg="black"
-        borderColor="white"
-        color="white"
-        borderRadius={'lg'}
-        isLoading={isLoading}
+      <button
+        className={`w-full p-3 mt-4 rounded-md ${isLoading ? 'bg-gray-500' : 'bg-black'} text-white`}
         onClick={onSubmit}
+        disabled={isLoading}
       >
         {t('sendMessage')}
-      </Button>
-    </Container>
+      </button>
+    </div>
   );
 }

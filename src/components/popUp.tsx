@@ -1,6 +1,6 @@
 'use client';
+
 import React, { useEffect, useState } from 'react';
-import { Button } from '@chakra-ui/react';
 import { useTranslations } from 'next-intl';
 
 type ModalProps = {
@@ -10,7 +10,7 @@ type ModalProps = {
 
 const PopUp = ({ content, agreeText }: ModalProps) => {
   const [isModalShown, setIsModalShown] = useState(false);
-  const t = useTranslations();
+  const t = useTranslations("Modal");
 
   useEffect(() => {
     const isModalShown = sessionStorage.getItem('isModalShown');
@@ -36,23 +36,17 @@ const PopUp = ({ content, agreeText }: ModalProps) => {
       {isModalShown && (
         <div className="fixed popup inset-0 z-50 flex items-end justify-end p-2">
           <div className="absolute "></div>
-          <div className="z-10 overflow-hidden bg-white rounded-lg ">
+          <div className="z-10 overflow-hidden bg-white rounded-lg">
             <div className="px-4 text-center bg-gray-100 border-2 py-2 max-w-[420px]">
-              <p className="text-lg text-gray-900 ">{t('modalСontent')}</p>
+              <p className="text-lg text-gray-900">{content || t('modalContent')}</p>
 
               <div className="flex justify-center mt-4">
-                <Button
+                <button
                   onClick={handleAgree}
-                  size="md"
-                  height="48px"
-                  width="200px"
-                  border="2px"
-                  bg="#22255f"
-                  borderColor="white"
-                  color="white"
+                  className="h-12 w-48 border-2 bg-[#22255f] border-white text-white duration-300 hover:scale-105"
                 >
-                  {t('modalAgreeText')}
-                </Button>
+                  {agreeText || t('modalAgreeText')}
+                </button>
               </div>
             </div>
           </div>

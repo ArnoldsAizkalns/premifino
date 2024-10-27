@@ -30,14 +30,21 @@
     "href":"https://premifino.el",
     "title":"PREMIFINO LTD"
   },
-  "welcomeMessage": "WELCOME TO PREMIFINO LTD",
-  "headline": "REAL ESTATE \n IN CYPRUS",
-  "description": "Premifino Ltd is a company that builds houses and apartment complexes. We focus on quality construction, sustainable materials, and creating comfortable living spaces for families and individuals alike.",
-  "aboutUsTitle": "About us",
+  "First" : {
+    "welcomeMessage": "WELCOME TO PREMIFINO LTD",
+    "headline": "REAL ESTATE \n IN CYPRUS",
+    "description": "Premifino Ltd is a company that builds houses and apartment complexes. We focus on quality construction, sustainable materials, and creating comfortable living spaces for families and individuals alike."
+  },
+  "Second" : {
+"aboutUsTitle": "About us",
   "aboutUsSubtitle": "We`re A Dedicated Team That Brings Homes And Apartment Complexes To Life",
   "aboutUsDescription": "Each project is a blend of local architecture and modern comforts, ensuring our builds complement Cyprus`s rich heritage. Here, we don`t just create structures; we craft homes that embody the Cypriot spirit.",
-  "contactButton": "Contact",
-  "weBuildMessage": "We build houses, apartments and commercial spaces",
+  "contactButton": "Contact"
+  },
+"Third":{
+  "weBuildMessage": "We build houses, apartments and commercial spaces"
+},
+ "Fourth":{
   "whyUsTitle": "why us",
   "whyUsSubtitle": "Going Above and Beyond To Build Your Next Home",
   "enduringQualityTitle": "enduring quality",
@@ -51,20 +58,33 @@
   "luxuryConvenience": "Luxury and Convenience Converge",
   "locationCommunityQuality": "Location, Community, Quality Living. It Starts Here!",
   "contactLink": "Contact",
-  "beautyPassion": "Beauty, Passion, Breathtaking Apartments",
+  "beautyPassion": "Beauty, Passion, Breathtaking Apartments"
+ },
+ "Fifth":{
   "weBuildFor": "We Build For",
-  "families": "Families,",
-  "crafting": "Crafting",
-  "spacesFor": "Spaces For",
-  "memories": "Memories",
-  "outstandingHousesApartments": "Outstanding houses & Apartments",
-  "nameAndSurname": "Name and Surname",
-  "required": "Required",
-  "sendMessage": "Send message",
-  "yourEmail": "Your E-mail",
-  "phoneNumber": "Phone Number",
-  "subject": "Subject",
-  "enterYourMessage": "Enter your message here",
-  "modalСontent": "This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies",
-  "modalAgreeText": "Agree"
+ "families": "Families,",
+ "crafting": "Crafting",
+ "spacesFor": "Spaces For",
+ "memories": "Memories"
+},
+"Slider": {
+    "houses" : "Houses",
+    "apartments":"Apartments",
+    "projects":"Projects"
+
+  },
+  "ContactForm":{
+    "outstandingHousesApartments": "Outstanding houses & Apartments",
+    "nameAndSurname": "Name and Surname",
+    "required": "Required",
+    "sendMessage": "Send message",
+    "yourEmail": "Your E-mail",
+    "phoneNumber": "Phone Number",
+    "subject": "Subject",
+    "enterYourMessage": "Enter your message here"
+  },
+"Modal": {
+    "modalContent": "This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",
+    "modalAgreeText": "Agree"
+  }
 }

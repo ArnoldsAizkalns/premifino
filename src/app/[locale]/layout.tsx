@@ -2,10 +2,10 @@ import clsx from 'clsx';
 import { notFound } from 'next/navigation';
 import { createTranslator, NextIntlClientProvider } from 'next-intl';
 import { ReactNode } from 'react';
-import Head from 'next/head'; // Добавлено для мета-тегов
+import Head from 'next/head';
 import Navigation from 'components/Navigation';
 import { allura, montserrat } from '../../../config/fonts';
-import { ChakraProvider } from '@chakra-ui/react';
+
 import PopUp from 'components/popUp';
 
 type Props = {
@@ -60,11 +60,9 @@ export default async function LocaleLayout({
         )}
       >
         <NextIntlClientProvider locale={locale} messages={messages}>
-          <ChakraProvider>
             <PopUp />
-            <Navigation />
             {children}
-          </ChakraProvider>
+            <Navigation />
         </NextIntlClientProvider>
       </body>
     </html>

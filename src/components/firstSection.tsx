@@ -1,9 +1,9 @@
-
-import React, { Component } from 'react';
+"use client"
+import React from 'react';
 import { useTranslations } from 'next-intl';
 
 export default function FirstSection() {
-  const t = useTranslations();
+  const t = useTranslations("First");
 
   return (
     <section id="home" className="first-bg h-screen">

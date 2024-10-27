@@ -1,29 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
-import {
-  Box,
-  Flex,
-  HStack,
-  IconButton,
-  Button,
-  Menu,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  Stack,
-} from '@chakra-ui/react';
-import { HamburgerIcon, CloseIcon, AddIcon } from '@chakra-ui/icons';
-import LocaleSwitcher from './LocaleSwitcher';
+import LocaleSwitcher from "./LocaleSwitcher";
 
 interface NavLinkProps {
   label: string;
   href: string;
 }
 
-const NavLink: React.FC<NavLinkProps> = ({ label, href }) => {
+const NavLink = ({ label, href }: NavLinkProps) => {
   const handleClick = (event: any) => {
     event.preventDefault();
     const section = document.querySelector(href);
@@ -33,27 +19,17 @@ const NavLink: React.FC<NavLinkProps> = ({ label, href }) => {
       block: 'start',
     });
   };
+
   return (
-    <Box
-      as="a"
-      px={2}
-      py={1}
-      rounded={'md'}
-      _hover={{
-        textDecoration: 'none',
-      }}
-      href={href}
-      bg="transparent"
-      onClick={handleClick}
-    >
+    <a href={href} onClick={handleClick} className="px-2 py-1 rounded-md bg-transparent hover:no-underline">
       {label}
-    </Box>
+    </a>
   );
 };
 
 export default function WithAction() {
   const t = useTranslations('Navigation');
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isOpen, setIsOpen] = useState(false);
 
   const Links = [
     { label: t('home'), href: '/' },
@@ -69,81 +45,76 @@ export default function WithAction() {
   const buttonTextColor = isOpen ? 'white' : 'black';
 
   return (
-    <>
-      <Box
-        as="header"
-        position="absolute"
-        backgroundColor={headerBgColor}
-        backdropFilter="saturate(100%) blur(0px)"
-        w="100%"
-      >
-        <Flex
-          className="max-w-7xl"
-          mx={'auto'}
-          h={16}
-          alignItems={'center'}
-          justifyContent={'space-between'}
-        >
-          <IconButton
-            size={'md'}
-            icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
-            aria-label={'Open Menu'}
-            display={{ md: 'none' }}
-            bg={'white'}
-            onClick={isOpen ? onClose : onOpen}
-          />
-          <HStack spacing={8} alignItems={'center'}>
-            <HStack
-              as={'nav'}
-              color={'white'}
-              spacing={4}
-              display={{ base: 'none', md: 'flex' }}
-            >
-              {Links.map((link) => (
-                <NavLink key={link.label} label={link.label} href={link.href} />
-              ))}
-            </HStack>
-          </HStack>
-          <Box className="hidden lg:block" color={'white'}>
-            PREMIFINO LTD
-          </Box>
-          <Flex w={400} justifyContent={'right'} alignItems={'center'}>
-            <Button
-              variant={'solid'}
-              bg={buttonBgColor}
-              color={buttonTextColor}
-              size={'sm'}
-              mr={4}
-            >
-              {t('contact')}
-            </Button>
-            <Menu>
-              <LocaleSwitcher />
-              <MenuList>
-                <MenuItem>Link 1</MenuItem>
-                <MenuItem>Link 2</MenuItem>
-                <MenuDivider />
-                <MenuItem>Link 3</MenuItem>
-              </MenuList>
-            </Menu>
-          </Flex>
-        </Flex>
+    <header
+      style={{ backgroundColor: headerBgColor, backdropFilter: 'saturate(100%) blur(0px)' }}
+      className="absolute w-full"
+    >
+      <div className="max-w-7xl mx-auto h-16 flex items-center justify-between">
+      <button
+  className="md:hidden bg-transparent p-2"
+  onClick={() => setIsOpen(!isOpen)}
+  aria-label="Open Menu"
+>
+  {isOpen ? (
+    // Иконка закрытия (иконка крестика)
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  ) : (
+    // Иконка бургера
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  )}
+</button>
 
-        {isOpen ? (
-          <Box
-            pb={4}
-            backgroundColor="rgba(255, 255, 255, 1)"
-            backdropFilter="saturate(100%) blur(0px)"
-            display={{ md: 'none' }}
+        <nav className="flex space-x-8 items-center">
+          <ul className="hidden md:flex space-x-4 text-white">
+            {Links.map((link) => (
+              <li key={link.label}>
+                <NavLink label={link.label} href={link.href} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+        <div className="hidden lg:block text-white">PREMIFINO LTD</div>
+        <div className="flex w-96 justify-end items-center">
+          <button
+            style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
+            className="p-2 rounded-md mr-4"
           >
-            <Stack as={'nav'} spacing={4}>
-              {Links.map((link) => (
-                <NavLink key={link.label} label={link.label} href={link.href} />
-              ))}
-            </Stack>
-          </Box>
-        ) : null}
-      </Box>
-    </>
+            {t('contact')}
+          </button>
+          <LocaleSwitcher />
+        </div>
+      </div>
+
+      {isOpen && (
+        <div
+          style={{ backgroundColor: 'rgba(255, 255, 255, 1)', backdropFilter: 'saturate(100%) blur(0px)' }}
+          className="md:hidden"
+        >
+          <ul className="space-y-4 p-4">
+            {Links.map((link) => (
+              <li key={link.label}>
+                <NavLink label={link.label} href={link.href} />
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+    </header>
   );
 }

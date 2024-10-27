@@ -1,10 +1,11 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import smallPicture from '../../public/SecondSectionSmallPicture.jpg';
 import { useTranslations } from 'next-intl';
 
 export default function SecondSection() {
-  const t = useTranslations();
+  const t = useTranslations("Second");
 
   return (
     <section

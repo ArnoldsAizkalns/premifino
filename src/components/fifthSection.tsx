@@ -1,15 +1,15 @@
+"use client"
 import React from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import SliderSection from './sliderSection';
-
 import apart1 from '../../public/sliderSection/5.1.png';
 import apart2 from '../../public/sliderSection/5.2.png';
 import apart3 from '../../public/sliderSection/5.3.png';
 import apart4 from '../../public/sliderSection/5.4.png';
 
 export default function FifthSection() {
-  const t = useTranslations();
+  const t = useTranslations("Fifth");
 
   return (
     <section className="bg-gray-100 md:pb-20 pb-10 mt-10 md:mt-20 font-allura font-sans px-0.5 h-auto">

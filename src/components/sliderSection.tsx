@@ -1,3 +1,4 @@
+"use client"
 import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
@@ -15,23 +16,25 @@ import slider4 from '../../public/sliderSection/slider1.jpg';
 import slider5 from '../../public/sliderSection/slider5.jpg';
 import slider6 from '../../public/sliderSection/slider12.jpg';
 import slider7 from '../../public/sliderSection/slider13.jpg';
+import { useTranslations } from 'next-intl';
 
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(0);
-
+const t = useTranslations("Slider")
   const handleSlideChange = (swiper: any) => {
     setActiveSlide(swiper.realIndex);
   };
 
   const slideTexts = [
-    ['01', 'Houses', 'Projects'],
-    ['02', 'Apartments', 'Projects'],
-    ['03', 'Houses', 'Projects'],
-    ['04', 'Apartments', 'Projects'],
-    ['05', 'Houses', 'Projects'],
-    ['06', 'Houses', 'Projects'],
-    ['07', 'Houses', 'Projects '],
+    ['01', t('houses'), t('projects')],
+    ['02', t('apartments'), t('projects')],
+    ['03', t('houses'), t('projects')],
+    ['04', t('apartments'), t('projects')],
+    ['05', t('houses'), t('projects')],
+    ['06', t('houses'), t('projects')],
+    ['07', t('houses'), t('projects')],
   ];
+
 
   return (
     <Swiper
