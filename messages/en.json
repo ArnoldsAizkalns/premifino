@@ -81,7 +81,9 @@
     "yourEmail": "Your E-mail",
     "phoneNumber": "Phone Number",
     "subject": "Subject",
-    "enterYourMessage": "Enter your message here"
+    "enterYourMessage": "Enter your message here",
+        "messageSentSuccessfully": "Message sent successfully!",
+    "messageNotSent": "Message not sent"
   },
 "Modal": {
     "modalContent": "This website uses cookies. By continuing to browse the site, you are agreeing to our use of cookies.",

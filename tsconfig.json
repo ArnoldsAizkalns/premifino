@@ -30,7 +30,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/components/contactForm.js",
+    "src/components/contactForm.tsx",
     "src/i18n/request.js"
   ],
   "exclude": [

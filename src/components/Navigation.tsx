@@ -32,7 +32,7 @@ export default function WithAction() {
   const [isOpen, setIsOpen] = useState(false);
 
   const Links = [
-    { label: t('home'), href: '/' },
+    { label: t('home'), href: '#home' },
     { label: t('about'), href: '#about' },
     { label: t('why us'), href: '#why-us' },
     { label: t('contact'), href: '#contact' },

@@ -3,7 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import { BlackFacebookIcon, BlackInstagramIcon } from './icons';
 import { siteConfig } from '../../config/site';
-import ContactForm from './contactForm.js';
+import ContactForm from './contactForm';
 import { useTranslations } from 'next-intl';
 
 export default function ContactSection() {

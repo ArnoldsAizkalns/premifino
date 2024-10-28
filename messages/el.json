@@ -80,7 +80,9 @@
   "yourEmail": "Το E-mail σας",
   "phoneNumber": "Αριθμός τηλεφώνου",
   "subject": "Θέμα",
-  "enterYourMessage": "Εισάγετε το μήνυμά σας εδώ"
+  "enterYourMessage": "Εισάγετε το μήνυμά σας εδώ",
+  "messageSentSuccessfully": "Το μήνυμα στάλθηκε επιτυχώς!",
+  "messageNotSent": "Το μήνυμα δεν στάλθηκε"
 },
   "Modal": {
     "modalContent": "Αυτή η ιστοσελίδα χρησιμοποιεί cookies. Συνεχίζοντας να περιηγείστε στην ιστοσελίδα, συμφωνείτε με τη χρήση cookies.",

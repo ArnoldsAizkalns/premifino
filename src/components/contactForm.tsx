@@ -1,47 +1,67 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { sendContactForm } from '../../pages/api/api';
 import { useTranslations } from 'next-intl';
 
-const initValues = { name: '', email: '', subject: '', message: '', phoneNumber: '' };
-const initState = { isLoading: false, error: '', values: initValues };
+interface FormValues {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  phoneNumber: string;
+}
 
-export default function ContactForm() {
+interface FormState {
+  isLoading: boolean;
+  error: string;
+  values: FormValues;
+}
+
+const initValues: FormValues = { name: '', email: '', subject: '', message: '', phoneNumber: '' };
+const initState: FormState = { isLoading: false, error: '', values: initValues };
+
+const ContactForm: React.FC = () => {
   const t = useTranslations("ContactForm");
-  const [state, setState] = useState(initState);
-  const [touched, setTouched] = useState({});
+  const [state, setState] = useState<FormState>(initState);
+  const [touched, setTouched] = useState<Partial<Record<keyof FormValues, boolean>>>({});
+  const [popUp, setPopUp] = useState<{ visible: boolean; message: string; success: boolean }>({ visible: false, message: '', success: false });
 
   const { values, isLoading, error } = state;
 
-  const onBlur = ({ target }) =>
-    setTouched((prev) => ({ ...prev, [target.name]: true }));
+  const onBlur = (event: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setTouched((prev) => ({ ...prev, [event.target.name]: true }));
 
-  const handleChange = ({ target }) =>
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setState((prev) => ({
       ...prev,
       values: {
         ...prev.values,
-        [target.name]: target.value,
+        [event.target.name]: event.target.value,
       },
     }));
 
-  const onSubmit = async () => {
-    setState((prev) => ({
-      ...prev,
-      isLoading: true,
-    }));
-    try {
-      await sendContactForm(values);
-      setTouched({});
-      setState(initState);
-    } catch (error) {
-      setState((prev) => ({
-        ...prev,
-        isLoading: false,
-        error: error.message,
-      }));
-    }
+    const onSubmit = async () => {
+      setState((prev) => ({ ...prev, isLoading: true }));
+      try {
+        await sendContactForm(values);
+        setTouched({});
+        setState(initState);
+        showPopUp(t('messageSentSuccessfully'), true); // Успешное сообщение
+      } catch (error) {
+        setState((prev) => ({
+          ...prev,
+          isLoading: false,
+        }));
+        showPopUp(t('messageNotSent'), false); // Ошибка отправки
+      }
+    };
+
+  const showPopUp = (message: string, success: boolean) => {
+    setPopUp({ visible: true, message, success });
+    setTimeout(() => {
+      setPopUp({ ...popUp, visible: false });
+    }, 2000);
   };
 
   return (
@@ -128,6 +148,17 @@ export default function ContactForm() {
       >
         {t('sendMessage')}
       </button>
+
+      {/* Всплывающее окно */}
+      {popUp.visible && (
+        <div className={`fixed w-full  bottom-[10%] flex justify-center`}>
+          <div className={`bg-white border border-slate-200 p-4 rounded shadow-xl mt-4`}>
+            <p className={`${popUp.success ? 'text-green-600' : 'text-red-600'} text-center font-bold`}>{popUp.message}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
+
+export default ContactForm;
