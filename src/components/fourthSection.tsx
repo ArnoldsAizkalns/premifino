@@ -14,9 +14,9 @@ export default function FourthSection() {
       <div className="flex flex-col mx-auto items-center text-center justify-between">
         <div className="md:mt-40 mt-10">
           <h2 className="uppercase text-sm">{t('whyUsTitle')}</h2>
-          <h1 className="text-4xl mt-6 font-normal tracking-wide">
+          <h2 className="text-4xl mt-6 font-normal tracking-wide">
             {t('whyUsSubtitle')}
-          </h1>
+          </h2>
         </div>
         <ul className="lg:flex !items-center grid gap-6 mt-10 justify-between">
           <li className="li-block">

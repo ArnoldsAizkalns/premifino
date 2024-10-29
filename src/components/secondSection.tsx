@@ -24,7 +24,7 @@ export default function SecondSection() {
     >
       <div className="flex-col lg:flex-row lg:flex items-center h-auto px-2 2xl:px-0">
         <div className="lg:w-1/2 flex flex-col items-center lg:items-start text-center lg:text-left h-[100%] space-y-4 overflow-hidden">
-          <h1>{t('aboutUsTitle')}</h1>
+          <h2>{t('aboutUsTitle')}</h2>
           <h2 className="w-[80%] text-2xl xl:text-3xl 2xl:text-4xl">
             {t('aboutUsSubtitle')}
           </h2>
