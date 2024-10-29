@@ -3,11 +3,13 @@
 import React, { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import LocaleSwitcher from "./LocaleSwitcher";
+import Link from 'next/link';
 
 interface NavLinkProps {
   label: string;
   href: string;
 }
+
 
 const NavLink = ({ label, href }: NavLinkProps) => {
   const handleClick = (event: any) => {
@@ -43,6 +45,16 @@ export default function WithAction() {
     : 'rgba(255, 255, 255, 0.1)';
   const buttonBgColor = isOpen ? 'black' : 'white';
   const buttonTextColor = isOpen ? 'white' : 'black';
+
+  const handleScrollToContact = (event: any) => {
+    event.preventDefault();
+    const section = document.querySelector('#contact');
+
+    section?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
 
   return (
     <header
@@ -91,12 +103,15 @@ export default function WithAction() {
         </nav>
         <div className="hidden lg:block text-white">PREMIFINO LTD</div>
         <div className="flex w-96 justify-end items-center">
+          <Link href='/#contact'>
           <button
+          onClick={handleScrollToContact}
             style={{ backgroundColor: buttonBgColor, color: buttonTextColor }}
             className="p-2 rounded-md mr-4"
           >
             {t('contact')}
           </button>
+          </Link>
           <LocaleSwitcher />
         </div>
       </div>

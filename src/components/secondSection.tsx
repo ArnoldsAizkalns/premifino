@@ -7,6 +7,16 @@ import { useTranslations } from 'next-intl';
 export default function SecondSection() {
   const t = useTranslations("Second");
 
+  const handleScrollToContact = (event: any) => {
+    event.preventDefault();
+    const section = document.querySelector('#contact');
+
+    section?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+    });
+  };
+
   return (
     <section
       id="about"
@@ -19,7 +29,7 @@ export default function SecondSection() {
             {t('aboutUsSubtitle')}
           </h2>
           <p className="md:w-4/5">{t('aboutUsDescription')}</p>
-          <button className="text-white rounded-lg text-sm w-[150px] bg-black">
+          <button onClick={handleScrollToContact} className="text-white rounded-lg text-sm w-[150px] bg-black">
             <p className="px-2 py-2">{t('contactButton')}</p>
           </button>
         </div>
