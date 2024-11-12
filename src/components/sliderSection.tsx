@@ -79,7 +79,7 @@ const t = useTranslations("Slider")
             >
               <Image
                 loading={index < 5 ? 'eager' : 'lazy'}
-                alt={`Slide ${index + 1}`}
+                alt={`Project ${index + 1}`}
                 src={slider}
               />
               {activeSlide === index && (

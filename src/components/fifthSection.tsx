@@ -18,21 +18,21 @@ export default function FifthSection() {
           <h4 className="text-4xl sm:text-5xl xl:text-7xl">
             {t('weBuildFor')}
           </h4>
-          <Image src={apart1} alt="" />
+          <Image src={apart1} alt="interior" />
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 items-center gap-4">
           <h4 className="text-4xl sm:text-5xl xl:text-7xl">{t('families')}</h4>
-          <Image src={apart2} alt="" />
+          <Image src={apart2} alt="apartment" />
           <h4 className="text-4xl sm:text-5xl xl:text-7xl">{t('crafting')}</h4>
-          <Image src={apart3} alt="" />
+          <Image src={apart3} alt="игшдвштп" />
         </div>
 
         <div className="grid md:grid-cols-3 items-center gap-4">
           <h4 className="text-4xl sm:text-5xl xl:text-7xl justify-center flex">
             {t('spacesFor')}
           </h4>
-          <Image className="" src={apart4} alt="" />
+          <Image className="" src={apart4} alt="backyard" />
           <h4 className="text-4xl sm:text-5xl xl:text-7xl justify-center flex">
             {t('memories')}
           </h4>

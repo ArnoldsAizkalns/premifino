@@ -35,7 +35,7 @@ export default function SecondSection() {
         </div>
         <div className="lg:w-1/2 hidden mt-4 lg:mt-0  h-full lg:flex items-center justify-center">
           <Image
-            alt=""
+            alt="house"
             src={smallPicture}
             className="w-full rounded-lg h-auto"
           />

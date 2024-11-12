@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import Navigation from 'components/Navigation';
 import PopUp from 'components/popUp';
 import { allura, montserrat } from '../../../config/fonts';
+import Head from 'next/head';
 
 // Экспорт метаданных
 export const viewport = 'width=device-width, initial-scale=1.0';
@@ -49,6 +50,9 @@ export default async function LocaleLayout({ children, params: { locale } }: Pro
 
   return (
     <html lang={locale} className="h-full">
+      <Head>
+        <link rel="canonical" href="https://premifino.eu" />
+      </Head>
       <body className={clsx('flex h-full flex-col font-mont antialiased', montserrat.variable, allura.variable)}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <PopUp />
