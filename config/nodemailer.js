@@ -13,5 +13,5 @@ export const transporter = nodemailer.createTransport({
 
 export const mailOptions = {
   from: email,
-  to: 'info@premifino.eu',
+  to: 'info@cbo7.eu',
 };
